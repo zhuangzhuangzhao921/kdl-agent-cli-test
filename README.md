@@ -113,7 +113,7 @@ npm pack
 打包白名单包含启动入口、平台二进制、版本与 SHA256 清单、README 和许可证。
 `test:package` 会将真实 tarball 安装到临时目录，测试帮助、版本、参数错误、模拟 Gateway 查询和凭证撤销响应。
 
-维护者更新版本后，执行完整构建和安装测试，再使用 `npm publish --access public` 发布。
+维护者更新版本后，执行完整构建和安装测试，再使用 `npm publish --access public --tag latest` 发布。
 
 ## 许可证
 

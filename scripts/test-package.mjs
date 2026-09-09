@@ -8,7 +8,10 @@ import { fileURLToPath } from 'node:url';
 const root = fileURLToPath(new URL('../', import.meta.url));
 const temp = mkdtempSync(join(tmpdir(), 'kdl-npm-'));
 function command(cmd, args, options = {}) {
-  const result = spawnSync(cmd, args, { cwd: root, encoding: 'utf8', ...options });
+  const result = spawnSync(cmd, args, {
+    cwd: root, encoding: 'utf8', ...options,
+    env: { ...process.env, ...options.env, npm_config_dry_run: 'false' },
+  });
   if (result.error) throw result.error;
   assert.equal(result.status, 0, `${cmd}: ${result.stdout}\n${result.stderr}`);
   return result.stdout;
