@@ -1,0 +1,9 @@
+node_modules/
+native/
+THIRD_PARTY_NOTICES.txt
+*.tgz
+.env
+.env.*
+kdl-agent.toml
+.kdl/
+.DS_Store

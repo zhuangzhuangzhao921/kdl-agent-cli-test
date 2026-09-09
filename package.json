@@ -1,0 +1,27 @@
+{
+  "name": "@zhuangzhuangzhao/kdl-agent-test",
+  "version": "0.1.0-alpha.1",
+  "description": "Kuaidaili CLI test distribution for account, order, and proxy operations.",
+  "license": "MIT",
+  "bin": { "kdl-agent-test": "bin/kdl-agent-test.cjs" },
+  "files": ["bin", "native", "THIRD_PARTY_NOTICES.txt"],
+  "engines": { "node": ">=22" },
+  "os": ["darwin", "linux"],
+  "cpu": ["arm64", "x64"],
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "build:local": "node scripts/build.mjs --current",
+    "test": "node --test test/*.test.mjs",
+    "test:package": "node scripts/test-package.mjs",
+    "verify:bundle": "node scripts/verify-bundle.mjs",
+    "prepublishOnly": "npm run verify:bundle && npm test && npm run test:package"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhuangzhuangzhao921/kdl-agent-cli-test.git"
+  },
+  "homepage": "https://github.com/zhuangzhuangzhao921/kdl-agent-cli-test#readme",
+  "bugs": { "url": "https://github.com/zhuangzhuangzhao921/kdl-agent-cli-test/issues" },
+  "keywords": ["kuaidaili", "proxy", "cli", "agent"],
+  "publishConfig": { "access": "public", "registry": "https://registry.npmjs.org/" }
+}
